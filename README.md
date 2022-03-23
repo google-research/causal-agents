@@ -22,7 +22,26 @@ to download the labels.
 
 ### Causal Agent Labels
 
-TODO: Describe proto.
+TODO: What package should the protocol buffer be under?
+
+The protocol buffer format for causal labels includes the following fields:
+
+**CausalLabels**
+
+-   scenario_id: The unique string identifier for the scenario.
+-   labeler_results: A list of LabelerResults, one from each individual who
+    labeled the datasets. Each scenario should have at least 5 individual
+    labelers.
+
+**LabelerResults**
+
+-   causal_agent_ids: A list of causal agent id strings entered by the labeler
+    in the submission box. The agent ids should correspond to the
+    ["id" field](https://github.com/waymo-research/waymo-open-dataset/blob/master/waymo_open_dataset/protos/scenario.proto#L62)
+    for the object Track in the Scenario proto. Note that the agent ids may be
+    repeated in the list (they are not necessarily unique), and in a small
+    number of cases the labeler may have entered a string that cannot be parsed
+    as an agent id.
 
 ### Perturbed Datasets
 
