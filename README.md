@@ -26,15 +26,22 @@ TODO: Describe proto.
 
 ### Perturbed Datasets
 
-We release four perturbed datasets: 1. RemoveNoncausal: Removes all non-causal
-agents in the dataset. 2. RemoveNoncausalEqual: Removes an equal number of
-randomly selected non-causal agents as there are causal agents in the scene.
-RemoveNoncausalEqual is meant to be a less aggressive form of RemoveNoncausal
-since it deletes fewer agents and it allows us to compare to RemoveCausal when
-controlling for the number of agents deleted. 3. RemoveStatic: Removes agents
-whose xyz positions do not change above a certain threshold (e.g. parked cars).
-Not all static agents are non-causal. 4. RemoveCausal: Removes all causal agents
-in the dataset, i.e., the comple- ment of RemoveNoncausal.
+We release four perturbed datasets:
+
+1.  **RemoveNoncausal**
+    -   Removes all non-causal agents in the dataset.
+2.  **RemoveNoncausalEqual**
+    -   Removes an equal number of randomly selected non-causal agents as there
+        are causal agents in the scene. RemoveNoncausalEqual is meant to be a
+        less aggressive form of RemoveNoncausal since it deletes fewer agents
+        and it allows us to compare to RemoveCausal when controlling for the
+        number of agents deleted.
+3.  **RemoveStatic**
+    -   Removes agents whose xyz positions do not change above a certain
+        threshold (e.g. parked cars). Not all static agents are non-causal.
+4.  **RemoveCausal**
+    -   Removes all causal agents in the dataset, i.e., the complement of
+        RemoveNoncausal.
 
 Among them, we categorize both RemoveNoncausal and RemoveNoncausalEqual as
 “non-causal” perturbations and we recommend these datasets as benchmarks for
@@ -68,5 +75,5 @@ This code repository is licensed under the Apache License, Version 2.0.
 
 ## Citation
 
-
 This is not an officially supported Google product.
+
