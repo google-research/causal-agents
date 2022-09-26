@@ -1,13 +1,13 @@
 # CausalAgents: A Robustness Benchmark for Motion Forecasting using Causal Relationships
 
 The causal agent labels are an additional attribute to the
-[Waymo Open Motion Dataset](https://waymo.com/open/challenges/2022/motion-prediction/).
+[Waymo Open Motion Dataset](https://waymo.com/open/data/motion).
 In addition to causal agent labels, we also release perturbed copies of the
 Waymo Open Motion Dataset validation dataset, which serve as robustness
 benchmarks to aid the research community in building more reliable and safe
 models for motion forecasting. For more information, please see the paper
 [CausalAgents: A Robustness Benchmark for Motion Forecasting using Causal
-Relationships](TODO:arxiv link).
+Relationships](https://arxiv.org/abs/2207.03586).
 
 ## Accessing the Data
 
@@ -15,14 +15,15 @@ In order to access the data, please go to
 [https://www.waymo.com/open](https://www.waymo.com/open) and click on Access
 Waymo Open Dataset, which requires a user to sign in with Google and accept the
 Waymo Open Dataset license terms. After logging in, please visit
-[https://pantheon.corp.google.com/storage/browser/waymo_open_dataset_causal_agents](https://pantheon.corp.google.com/storage/browser/waymo_open_dataset_causal_agents)
+[https://console.cloud.google.com/storage/browser/waymo_open_dataset_causal_agents](https://console.cloud.google.com/storage/browser/waymo_open_dataset_causal_agents)
 to download the labels.
 
 ## Dataset format
 
 ### Causal Agent Labels
 
-TODO: What package should the protocol buffer be under?
+The causal agent labels are released as a TFRecord of causal labels protos
+([causal_label.proto](https://github.com/googlestaging/causal-agents/blob/main/protos/causal_labels.proto)).
 
 The protocol buffer format for causal labels includes the following fields:
 
@@ -77,16 +78,10 @@ any model you evaluate on the perturbed datasets correctly ignores all agent
 state if the valid bit is false. (We verified this for all models we evaluated
 in the paper).
 
-Similar to the original WOMD, each perturbed dataset is provided in two forms
-which consist of sharded
+We provide each perturbed dataset as sharded
 [TFRecord](https://www.tensorflow.org/tutorials/load_data/tfrecord) files
-containing [protocol buffer](https://developers.google.com/protocol-buffers)
-data. The first form uses
-[Scenario protocol buffers](https://github.com/waymo-research/waymo-open-dataset/tree/master/waymo_open_dataset/protos/scenario.proto).
-The second form converts the Scenario protos into
-[tf.Example protos](https://waymo.com/open/data/motion/tfexample). More details
-on both formats can be found on the
-[WOMD website](https://waymo.com/open/data/motion/).
+containing
+[WOMD tf.Example protos](https://waymo.com/open/data/motion/tfexample).
 
 ## License
 
@@ -94,5 +89,14 @@ This code repository is licensed under the Apache License, Version 2.0.
 
 ## Citation
 
-This is not an officially supported Google product.
+If you use this data, please include the following citation:
 
+> @article{roelofs2022causalagents, title={CausalAgents: A Robustness Benchmark
+> for Motion Forecasting using Causal Relationships}, author={Roelofs, Rebecca
+> and Sun, Liting and Caine, Ben and Refaat, Khaled S and Sapp, Ben and
+> Ettinger, Scott and Chai, Wei}, journal={arXiv preprint arXiv:2207.03586},
+> year={2022} }
+
+## Disclaimer
+
+This is not an officially supported Google product.
