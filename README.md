@@ -23,7 +23,7 @@ to download the labels.
 ### Causal Agent Labels
 
 The causal agent labels are released as a TFRecord of causal labels protos
-([causal_label.proto](https://github.com/googlestaging/causal-agents/blob/main/protos/causal_labels.proto)).
+([causal_label.proto](https://github.com/google-research/causal-agents/blob/main/protos/causal_labels.proto)).
 
 The protocol buffer format for causal labels includes the following fields:
 
